@@ -1,0 +1,19 @@
+程式碼
+
+def sort_mixed_numbers(s):
+    # 分類奇數與偶數
+    odd_numbers = sorted([c for c in s if int(c) % 2 == 1], reverse=True)  # 奇數降冪排序
+    even_numbers = sorted([c for c in s if int(c) % 2 == 0])  # 偶數升冪排序
+    
+    # 合併並回傳結果
+    return ''.join(odd_numbers + even_numbers)
+
+# 測試
+test_input = "417324689435"
+result = sort_mixed_numbers(test_input)
+print(result)  # 預期輸出：'975331244468'
+
+程式邏輯
+1. 篩選奇數並降冪排序（由大到小）。
+2. 篩選偶數並升冪排序（由小到大）。
+3. 合併結果並輸出。
